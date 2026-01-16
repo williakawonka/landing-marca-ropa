@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marca de Ropa | Landing Oficial</title>
+
+    <!-- =====================
+         ESTILOS GENERALES
+    ====================== -->
+    <style>
+        :root {
+            --color-principal: #111;
+            --color-secundario: #f5f5f5;
+            --color-acento: #c7a46d;
+            --texto-principal: #222;
+            --texto-secundario: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: var(--texto-principal);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img, video {
+            max-width: 100%;
+            display: block;
+        }
+
+        section {
+            padding: 80px 5%;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* =====================
+           HEADER / NAV
+        ====================== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav li {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* =====================
+           HERO SECTION
+        ====================== */
+        .hero {
+            padding-top: 140px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: var(--texto-secundario);
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--color-principal);
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--color-acento);
+        }
+
+        .hero-media {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 320px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* =====================
+           COLECCIÓN
+        ====================== */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            text-align: center;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 280px;
+            background: #e0e0e0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .card h3 {
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--texto-secundario);
+        }
+
+        /* =====================
+           SOBRE LA MARCA
+        ====================== */
+        .about {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .about-media {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        /* =====================
+           LOOKBOOK
+        ====================== */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery .image-placeholder {
+            height: 220px;
+        }
+
+        /* =====================
+           CTA
+        ====================== */
+        .cta {
+            background: var(--color-principal);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-bottom: 20px;
+        }
+
+        /* =====================
+           FOOTER
+        ====================== */
+        footer {
+            background: #f2f2f2;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer .socials {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* =====================
+           RESPONSIVE
+        ====================== */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- =====================
+     HEADER
+===================== -->
+<header>
+    <div class="nav-container">
+        <!-- LOGO (Editable) -->
+        <div class="logo">NOMBRE DE MARCA</div>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#coleccion">Colección</a></li>
+                <li><a href="#marca">Sobre la Marca</a></li>
+                <li><a href="#lookbook">Lookbook</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- =====================
+     HERO
+===================== -->
+<section class="hero" id="inicio">
+    <div class="hero-text">
+        <h1>ESLOGAN DE TU MARCA</h1>
+        <p>Texto editable para comunicar el concepto, estilo y actitud de la marca.</p>
+        <a href="#" class="btn">Ver colección</a>
+    </div>
+
+    <div class="hero-media">
+        <!-- AQUÍ INSERTAR TU VIDEOCLIP PROMOCIONAL -->
+        <!-- Reemplaza este div por una etiqueta <video> -->
+        <div class="video-placeholder">
+            Videoclip promocional<br>(Reemplazar aquí)
+        </div>
+    </div>
+</section>
+
+<!-- =====================
+     COLECCIÓN
+===================== -->
+<section id="coleccion">
+    <h2>Colección Destacada</h2>
+
+    <div class="grid">
+        <!-- PRODUCTO 1 -->
+        <div class="card">
+            <!-- Reemplazar por imagen del producto -->
+            <div class="image-placeholder">Imagen del producto</div>
+            <h3>Nombre de la prenda</h3>
+            <p>Descripción breve del producto.</p>
+        </div>
+
+        <!-- PRODUCTO 2 -->
+        <div class="card">
+            <div class="image-placeholder">Imagen del producto</div>
+            <h3>Nombre de la prenda</h3>
+            <p>Descripción breve del producto.</p>
+        </div>
+
+        <!-- PRODUCTO 3 -->
+        <div class="card">
+            <div class="image-placeholder">Imagen del producto</div>
+            <h3>Nombre de la prenda</h3>
+            <p>Descripción breve del producto.</p>
+        </div>
+
+        <!-- PRODUCTO 4 -->
+        <div class="card">
+            <div class="image-placeholder">Imagen del producto</div>
+            <h3>Nombre de la prenda</h3>
+            <p>Descripción breve del producto.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =====================
+     SOBRE LA MARCA
+===================== -->
+<section id="marca">
+    <div class="about">
+        <div class="about-text">
+            <h2>Sobre la Marca</h2>
+            <p>
+                Texto editable donde puedes contar la historia, valores y visión de tu marca de ropa.
+                Este contenido está pensado para reforzar el branding y la identidad.
+            </p>
+        </div>
+
+        <div class="about-media">
+            <!-- Imagen opcional de marca -->
+            <div class="image-placeholder">Imagen de marca</div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================
+     LOOKBOOK
+===================== -->
+<section id="lookbook">
+    <h2>Lookbook</h2>
+
+    <div class="gallery">
+        <!-- Reemplazar cada bloque por una imagen -->
+        <div class="image-placeholder">Lookbook</div>
+        <div class="image-placeholder">Lookbook</div>
+        <div class="image-placeholder">Lookbook</div>
+        <div class="image-placeholder">Lookbook</div>
+    </div>
+</section>
+
+<!-- =====================
+     CTA
+===================== -->
+<section class="cta" id="contacto">
+    <h2>Descubre el estilo que te define</h2>
+    <a href="#" class="btn">Explorar ahora</a>
+</section>
+
+<!-- =====================
+     FOOTER
+===================== -->
+<footer>
+    <p>© 2026 Nombre de la Marca. Todos los derechos reservados.</p>
+
+    <div class="socials">
+        <!-- Enlaces editables -->
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+    </div>
+
+    <p>Aviso legal · Política de privacidad</p>
+</footer>
+
+<!-- =====================
+     JAVASCRIPT
+===================== -->
+<script>
+    // Espacio reservado para futuras interacciones o animaciones
+    console.log("Landing page cargada correctamente");
+</script>
+
+</body>
+</html>
